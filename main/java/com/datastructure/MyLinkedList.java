@@ -1,5 +1,4 @@
 package com.datastructure;
-
 public class MyLinkedList <K> {
     public INode<K> head;
     public INode<K> tail;
@@ -30,6 +29,21 @@ public class MyLinkedList <K> {
             this.tail.setNext(newNode) ;
             this.tail = newNode;
         }
+    }
+    public boolean appendAfter(INode myNode,MyNode newNode)
+    {
+        INode tempNode =head;
+        while (tempNode.getNext() != null) {
+            if (tempNode.getKey().equals(myNode.getKey())) {
+                INode tempTail = tail;
+                tempNode.setNext(newNode);
+                newNode.setNext(tempTail);
+                return true;
+            }
+            tempNode = tempNode.getNext();
+
+        }
+        return false;
     }
 
     public void insert (MyNode<Integer> myNode, MyNode<Integer> newNode )
