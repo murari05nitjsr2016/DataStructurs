@@ -72,6 +72,23 @@ public class MyLinkedListTest {
        Assertions.assertEquals(result,30);
     }
 
+    @Test
+    public void given3NumbersWhenAddedToLinkedListAndDeleteTheLastElement() {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.add(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        myLinkedList.popLast();
+        myLinkedList.printMyNodes();
+        Integer result= (Integer) myLinkedList.tail.getKey();
+        System.out.println(result);
+        Assertions.assertEquals(result,30);
+    }
+
+
 
 
 
