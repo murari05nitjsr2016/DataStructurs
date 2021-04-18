@@ -132,6 +132,27 @@ public class MyLinkedListTest {
         Assertions.assertTrue(result);
 
     }
+    @Test
+    public void deletedNodeFromLinkedListShouldReturnTheCurrentLength()
+    {
+        MyLinkedList myLinkedList = new MyLinkedList();
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(40);
+        MyNode<Integer> myFourthNode = new MyNode<>(70);
+        myLinkedList.append(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        myLinkedList.append(myFourthNode);
+        myLinkedList.printMyNodes();
+        int length = myLinkedList.length();
+        System.out.println(length);
+        myLinkedList.delete(myThirdNode);
+        myLinkedList.printMyNodes();
+        int newLength = myLinkedList.length();
+        Assertions.assertEquals(3,newLength);
+    }
+
 }
 
 
