@@ -44,6 +44,28 @@ last added node i.e head pointing node from stack.
         Assertions.assertEquals(myThirdNode,pop);
 
     }
+/*This test case checks whether queue is following the FIFO
+principle or not.peak() should return the first added node
+ */
+    @Test
+    public void given3NumbersWhenAddedToQueueShouldHaveLastAddedNode(){
+        MyNode<Integer> myFirstNode = new MyNode<>(70);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(56);
+        MyQueue myQueue = new MyQueue();
+        myQueue.push(myFirstNode);
+        myQueue.push(mySecondNode);
+        myQueue.push(myThirdNode);
+        myQueue.printStack();
+        INode  peak = myQueue.peak();
+        Assertions.assertEquals(myFirstNode,peak);
+
+
+
+
+
+
+    }
 
 
 }
