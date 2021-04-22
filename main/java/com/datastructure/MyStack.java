@@ -20,4 +20,9 @@ public class MyStack {
     public INode peak() {
         return myLinkedList.head;
     }
+// This method deletes the last node from stack
+    public INode pop() {
+        return myLinkedList.pop();
+
+    }
 }
